@@ -1,0 +1,10 @@
+<div class="container mx-auto px-10">
+  <h1 class="text-3xl font-bold underline underline-offset-4">Posts</h1>
+  <ul>
+    <% @slugs.each do |slug| %>
+      <li>
+        <%= link_to slug.titleize, post_path(slug) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

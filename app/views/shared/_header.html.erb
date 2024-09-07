@@ -1,0 +1,54 @@
+<!-- component -->
+<nav
+  class="
+    flex items-center justify-between flex-wrap bg-teal p-6 container mx-auto
+  "
+>
+  <div class="flex items-center flex-no-shrink text-white mr-6">
+    <img src="/icon.svg" alt="H" class="w-10 mx-5">
+    <span class="font-semibold text-xl tracking-tight"><%= "#{t("name")}" %></span>
+  </div>
+  <div class="block lg:hidden">
+    <button
+      class="
+        flex items-center px-3 py-2 border rounded text-rose-400 border-white
+        hover:text-white hover:border-white
+      "
+    >
+      <svg class="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+    </button>
+  </div>
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto mx-auto">
+    <div class="text-sm lg:flex-grow lg:justify-center lg:flex">
+      <%= if I18n.locale != :en
+        link_to "English",
+        url_for(locale: :en),
+        data: {
+          turbo: false,
+        },
+        class:
+          "px-4 py-2 bg-rose-300 text-white rounded-md hover:bg-rose-600 transition"
+      end %>
+      <%= if I18n.locale != :ar
+        link_to "العربية",
+        url_for(locale: :ar),
+        data: {
+          turbo: false,
+        },
+        class:
+          "px-4 py-2 bg-rose-300 text-white rounded-md hover:bg-rose-600 transition"
+      end %>
+
+    </div>
+    <div>
+      <a
+        href="#"
+        class="
+          inline-block text-sm px-4 py-2 leading-none border rounded text-white
+          border-white hover:border-transparent hover:text-rose-900 hover:bg-white mt-4
+          lg:mt-0
+        "
+      >Download CV</a>
+    </div>
+  </div>
+</nav>
